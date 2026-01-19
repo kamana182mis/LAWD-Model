@@ -104,52 +104,6 @@ results4$summary_stats
 
 
 ###################TTT PLOTS###################################
-
-# hrf_function = function(al, th, be, ga, et){
-#   srf = 1- 1/(1 + (al * x^th + be * x^ga)^(-et))
-#   pdf = (et * (al * th * x^(th-1) + be * ga * x^(ga-1)) * ((al * x^th + be * x^ga)^(et-1))) /
-#     ((1 + (al * x^th + be * x^ga)^(et))^2)
-#   hrf = pdf/srf
-#   return(hrf)
-# }
-# 
-# png(file.path(folder_path, "hrf_1.png"), width = 6, height = 8, units = "in", res = 300)
-# par(mar = c(5, 6, 4, 2) + 0.1)
-# x = seq(0.1,7,.01)
-# 
-# 
-# #α = 2.4, θ = 2.8, β = 2.9, γ = 2.4, η = 0.8
-# #α = 1.2, θ = 1.6, β = 1.4, γ = 1.3, η = 1.5
-# #α = 2.5, θ = 0.8, β = 2.6, γ = 0.7, η = 1.6
-# #α = 0.8, θ = 2.6, β = 0.7, γ = 2.5, η = 2.6
-# 
-# 
-# # Compute the y-range for all curves
-# y_max = max(
-#   hrf_function(2.4, 2.8, 2.9, 2.4, 0.8),
-#   hrf_function(1.2, 1.6, 1.4, 1.3, 1.5),
-#   hrf_function(2.5, 0.8, 2.6, 0.7, 1.6),
-#   hrf_function(0.8, 2.6, 0.7, 2.5, 2.6)
-# )
-# 
-# # Now plot with the adjusted y-limits
-# plot(x, hrf_function(2.4, 2.8, 2.9, 2.4, 0.8), type = "l", lwd = 2, lty = 1, col = "red",
-#      xlab = "X", ylab = "HF", ylim = c(0, y_max), cex.lab = 2, cex.axis = 2)
-# lines(x, hrf_function(1.2, 1.6, 1.4, 1.3, 1.5), lwd = 2, lty = 2, col = "blue")
-# lines(x, hrf_function(2.5, 0.8, 2.6, 0.7, 1.6), lwd = 2, lty = 3, col = "purple")
-# lines(x, hrf_function(0.8, 2.6, 0.7, 2.5, 2.6), lwd = 2, lty = 4, col = "green")
-# 
-# 
-# legend(4, 6, legend = c(
-#   expression(paste(theta == 4)),
-#   expression(paste(theta == 2)),
-#   expression(paste(theta == 1.5)),
-#   expression(paste(theta == 0.5)),
-#   expression(paste(theta == 0.8))
-# ), lwd = 2, lty = 1:5, col = c("red", "blue", "purple", "green", "orange"), cex = 1.5, bty = "n")
-# 
-
-
 set.seed(123)
 
 # ---------- Data generator ----------
@@ -207,4 +161,5 @@ set.seed(22); save_TTT(tp1, "TTT_LAWD_bathtub1.png", "TTT plot (bathtub)")
 set.seed(22); save_TTT(tp2, "TTT_LAWD_bathtub2.png", "TTT plot (bathtub)")
 set.seed(22); save_TTT(tp3, "TTT_LAWD_decreasing.png", "TTT plot (decreasing)")
 set.seed(22); save_TTT(tp4, "TTT_LAWD_increasing.png", "TTT plot (increasing)")
+
 
