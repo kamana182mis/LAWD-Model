@@ -494,7 +494,6 @@ plot3 <- create_boxplot(fdf3, "Lifetimes of Blood cancer patients")
 combined_plot <- ggarrange(plot1, plot2, plot3, nrow = 1, ncol = 3)
 combined_plot
 
-#ggsave("boxplots_high_res.png", combined_plot, width = 12, height = 4, dpi = 300)
 
 plot_survival_distributions <- function(x, final_results, legend_pos = c(0.9, 0.7), x_label = "x") {
   x_sorted <- sort(x)
@@ -567,10 +566,6 @@ surv1 = plot_survival_distributions(df1, final_results1)
 surv2 = plot_survival_distributions(df2, final_results2)
 surv3 = plot_survival_distributions(df3, final_results3)
 
-# ggsave(filename = "LAWD_D1_sur.png",  plot = surv1, width = 8,height = 5,dpi = 300)
-# ggsave(filename = "LAWD_D2_surv.png",  plot = surv2,width = 8,height = 5,dpi = 300)
-# ggsave(filename = "LAWD_D3_surv.png",  plot = surv3,width = 8,height = 5,dpi = 300)
-# 
 
 plot_fitted_distributions <- function(x, original_x, c, final_results, y_limit = NULL, x_limit = NULL, bin, legend_pos = c(0.5, 0.78), x_label = "x-axis label") {
   hist_data <- data.frame(x = x)
@@ -686,7 +681,4 @@ p1 = plot_fitted_distributions(df1, fdf1, 100,  final_results1, bin = 20,  y_lim
 p2 = plot_fitted_distributions(df2, fdf2, 10, final_results2,  bin = 20, y_limit = c(0,0.36), legend_pos = c(0.8, 0.78), x_label = "")
 p3 = plot_fitted_distributions(df3, fdf3, 1000, final_results3, bin = 20 , legend_pos = c(0.9, 0.78),x_label = "")
 
-# ggsave(filename = "LAWD_D1_fit.png",  plot = p1,width = 8,height = 5,dpi = 300)
-# ggsave(filename = "LAWD_D2_fit.png",  plot = p2,width = 8,height = 5,dpi = 300)
-# ggsave(filename = "LAWD_D3_fit.png",  plot = p3,width = 8,height = 5,dpi = 300)
-# 
+
