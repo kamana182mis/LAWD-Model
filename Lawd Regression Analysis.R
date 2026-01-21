@@ -55,7 +55,15 @@ LogL <- function(x) {
   
   return(-(ff + ffc))
 }
+res = optim(par = c(0.01, 0.01, 0.01, 0.01, 0.01, 0.01),
+            fn = LogL,
+            lower = c(0.0001, 0.001, 0.0001, 0.0001, -Inf, -Inf),
+            upper = rep(Inf, 6),
+            method = "L-BFGS-B", hessian = T
+)
 
+
+#1.0481676  0.0010000  0.2358246  1.8037058 13.2850121 -0.2073515 # again estimate beta with these
 
 res = optim(par = c(1.0481676,  0.0010000*2,  0.2358246,  1.8037058, 13.2850121, -0.2073515),
             fn = LogL,
@@ -285,3 +293,4 @@ axis(1, at = x_ticks, labels = c(0, 10, 20, 30, 40, 60),cex.axis = 1.3)
 abline(h = -2, lty = 3,lwd=2, col="red")
 abline(h = 2, lty = 3,lwd=2,col="red")
 abline(h = 0, lty = 2,lwd=2)
+
